@@ -34,7 +34,7 @@ class process:
     self.DATAS["교직영역"] = []
   
   def request_api(self):
-    syu_class_api = requests.get("https://syu-class.kro.kr/api")
+    syu_class_api = requests.get("https://syu-class.kro.kr/api/undergraduate/v1/15")
     self.API_DATA = syu_class_api.json()
   
   def data_remake(self):

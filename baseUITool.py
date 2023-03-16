@@ -37,7 +37,7 @@ class Ui_Dialog_Override(Ui_Dialog):
   def retranslateUi(self, dialog):
     super().retranslateUi(dialog)
     
-    dialog.setWindowTitle("syu-class-api")
+    dialog.setWindowTitle("syu-class")
     dialog.setWindowFlags(QtCore.Qt.WindowFlags() | QtCore.Qt.WindowMinimizeButtonHint | QtCore.Qt.WindowCloseButtonHint)
     dialog.resize(818 + 200, 699)
     
