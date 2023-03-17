@@ -12,8 +12,7 @@
 #  @link https://github.com/0verfl0w767
 #  @license MIT LICENSE
 #
+from syuclassprogram.process.process import process
 
-import process
-
-PROCESS = process.process()
+PROCESS = process()
 PROCESS.run()
