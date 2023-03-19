@@ -20,8 +20,6 @@ SYU-CLASS-CONVERTER: [@syu-class-converter](https://github.com/0verfl0w767/syu-c
 
 SYU-CLASS-EXE: [@syu-class-exe](https://github.com/0verfl0w767/syu-class-exe)
 
-<br>
-
 # syu-class-exe
 
 A syu-class software for su-wings lecture information in Python.
