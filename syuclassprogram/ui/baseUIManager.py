@@ -68,8 +68,32 @@ class Ui_Dialog_Override(form_class):
     self.checkBox_6.stateChanged.connect(self.checkBox6)
     self.checkBox_7.stateChanged.connect(self.checkBox7)
     self.checkBox_8.stateChanged.connect(self.checkBox8)
-  
+
   def stateManage(self, name, value):
+    self.STATES[name] = value
+    self.tableWidget.setRowCount(0)
+    count = 0
+  
+    for state_name, state_value in self.STATES.items():
+      if state_value == False:
+        continue
+        
+      for data in self.DATAS[state_name]:
+        self.tableWidget.insertRow(count)
+        
+        self.tableWidget.setItem(count, 0, QtWidgets.QTableWidgetItem(data["과목코드"]))
+        self.tableWidget.setItem(count, 1, QtWidgets.QTableWidgetItem(data["과목명"]))
+        self.tableWidget.setItem(count, 2, QtWidgets.QTableWidgetItem(data["학년"]))
+        self.tableWidget.setItem(count, 3, QtWidgets.QTableWidgetItem(data["이수구분"]))
+        self.tableWidget.setItem(count, 4, QtWidgets.QTableWidgetItem(data["영역구분"]))
+        self.tableWidget.setItem(count, 5, QtWidgets.QTableWidgetItem(data["학점"]))
+        self.tableWidget.setItem(count, 6, QtWidgets.QTableWidgetItem(data["교수명"]))
+        self.tableWidget.setItem(count, 7, QtWidgets.QTableWidgetItem(data["수업시간"]))
+        self.tableWidget.setItem(count, 8, QtWidgets.QTableWidgetItem(data["장소"]))
+        
+        count += 1
+
+    """def stateManage(self, name, value):
     self.tableWidget.setRowCount(0)
     self.STATES[name] = value
     self.tableWidget.setRowCount(300)
@@ -90,7 +114,7 @@ class Ui_Dialog_Override(form_class):
         self.tableWidget.setItem(count, 5, QtWidgets.QTableWidgetItem(data["학점"]))
         self.tableWidget.setItem(count, 6, QtWidgets.QTableWidgetItem(data["교수명"]))
         self.tableWidget.setItem(count, 7, QtWidgets.QTableWidgetItem(data["수업시간"]))
-        self.tableWidget.setItem(count, 8, QtWidgets.QTableWidgetItem(data["장소"]))
+        self.tableWidget.setItem(count, 8, QtWidgets.QTableWidgetItem(data["장소"]))"""
   
   def checkBox1(self, state):
     if state == QtCore.Qt.Checked:
